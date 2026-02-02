@@ -53,6 +53,7 @@ set(COMPILE_ONLY_SOURCES
     TestTeamPolicyCTAD.cpp
     TestTeamMDRangePolicyCTAD.cpp
     TestNestedReducerCTAD.cpp
+    view/TestAccessorFromMemoryTraits.cpp
     view/TestBasicViewMDSpanConversion.cpp
     view/TestViewCustomization.cpp
     view/TestExtentsDatatypeConversion.cpp
