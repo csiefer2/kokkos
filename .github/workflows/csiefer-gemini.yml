@@ -23,7 +23,7 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git remote add upstream https://github.com/trilinos/Trilinos.git
+          git remote add upstream https://github.com/kokkos/kokkos.git
           git fetch upstream develop
 
       - name: Update Develop from trilinos/Trilinos
@@ -38,7 +38,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.MIRROR_PAT }} # Use PAT for CLI calls too
         run: |
-          PRS=$(gh pr list --repo trilinos/Trilinos --state open --json number,author --jq '.[] | select(.author.login == "csiefer2" or .author.login == "cgcgcg") | .number')          
+          PRS=$(gh pr list --repo kokkos/kokkos --state open --json number,author --jq '.[] | select(.author.login == "crtrott" or .author.login == "ndellin") | .number')          
           echo "prs=$(echo $PRS | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
 
       - name: Mirror PRs
