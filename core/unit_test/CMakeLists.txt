@@ -56,11 +56,13 @@ set(COMPILE_ONLY_SOURCES
     TestTeamPolicyCTAD.cpp
     TestTeamMDRangePolicyCTAD.cpp
     TestNestedReducerCTAD.cpp
+    view/TestAccessorFromMemoryTraits.cpp
     view/TestBasicViewMDSpanConversion.cpp
     view/TestViewCustomization.cpp
     view/TestExtentsDatatypeConversion.cpp
     view/TestConversionFromPointer.cpp
     view/TestMemoryTraitTypes.cpp
+    view/TestViewMDSpanTemplateArgumentEquivalence.cpp
 )
 
 # FIXME_NEXTSILICON: whitelisted tests
@@ -73,7 +75,9 @@ if(NOT Kokkos_ENABLE_IMPL_MDSPAN OR KOKKOS_CXX_COMPILER_ID STREQUAL "Intel")
 endif()
 
 if(NOT Kokkos_ENABLE_IMPL_MDSPAN OR Kokkos_ENABLE_IMPL_VIEW_LEGACY)
+  list(REMOVE_ITEM COMPILE_ONLY_SOURCES view/TestAccessorFromMemoryTraits.cpp)
   list(REMOVE_ITEM COMPILE_ONLY_SOURCES view/TestViewCustomization.cpp)
+  list(REMOVE_ITEM COMPILE_ONLY_SOURCES view/TestViewMDSpanTemplateArgumentEquivalence.cpp)
 endif()
 
 #testing if windows.h and Kokkos_Core.hpp can be included
