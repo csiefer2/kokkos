@@ -61,8 +61,6 @@ export {
   using ::Kokkos::Impl::SharedAllocationTracker;
   using ::Kokkos::Impl::size_mismatch;
   using ::Kokkos::Impl::SpaceAwareAccessor;
-  using ::Kokkos::Impl::SubviewExtents;
-  using ::Kokkos::Impl::SubviewLegalArgsCompileTime;
   using ::Kokkos::Impl::transform_kokkos_slice_to_mdspan_slice;
   using ::Kokkos::Impl::ViewArguments;
   using ::Kokkos::Impl::ViewArrayAnalysis;
